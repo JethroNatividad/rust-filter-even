@@ -60,6 +60,7 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
     }
 }
 fn main() {
+    let numbers: Vec<i64>;
     loop {
         // get input, "Enter a list of numbers, separated by spaces: "
         let input: String = get_input("Enter a list of numbers, separated by spaces: ");
@@ -68,11 +69,26 @@ fn main() {
         let result: Result<Vec<i64>, _> = split_input.iter().map(|s| s.parse::<i64>()).collect();
         // if there is not number, show error.
         match result {
-            Ok(_) => break,
+            Ok(numbers_vector) => {
+                numbers = numbers_vector;
+                break;
+            }
             Err(_) => println!("There is an invalid number in your input."),
         }
     }
 
     // get the even numbers
+    let even_numbers: Vec<i64> = filter_even_numbers(numbers);
     // print, "The even numbers are: "
+    print!("The even numbers are: ");
+    even_numbers
+        .iter()
+        .enumerate()
+        .for_each(|(index, even_number)| {
+            if index == even_numbers.len() - 1 {
+                print!("{}.\n", even_number)
+            } else {
+                print!("{} ", even_number)
+            }
+        });
 }
