@@ -8,10 +8,18 @@
 
 fn filter_even_numbers(numbers: Vec<i64>) -> Vec<i64> {
     // initialize even vector
+    let mut even: Vec<i64> = vec![];
     // Iterate numbers
     // if divisible by 2, push to even vector
 
+    for number in numbers {
+        if number % 2 == 0 {
+            even.push(number);
+        }
+    }
+
     // return even vector
+    even
 }
 mod tests {
     use super::*;
