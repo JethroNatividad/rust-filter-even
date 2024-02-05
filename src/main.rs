@@ -1,3 +1,6 @@
+use std::io;
+use std::io::Write;
+
 // Takes in numbers separated by space, then outputs the even numbers.
 // Inputs: numbers separated by space
 // Process: Iterating the numbers, make new list with the even numbers.
@@ -37,6 +40,23 @@ mod tests {
         );
 
         assert_eq!(filter_even_numbers(vec![0]), vec![0]);
+    }
+}
+
+fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
+    loop {
+        print!("{}", prompt);
+        io::stdout().flush().unwrap();
+
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
+
+        match input.trim().parse() {
+            Ok(value) => break value,
+            Err(_) => println!("Invalid input. Please try again."),
+        }
     }
 }
 fn main() {
