@@ -13,11 +13,11 @@ fn filter_even_numbers(numbers: Vec<i64>) -> Vec<i64> {
     // Iterate numbers
     // if divisible by 2, push to even vector
 
-    for number in numbers {
+    numbers.iter().for_each(|number| {
         if number % 2 == 0 {
-            even.push(number);
+            even.push(*number)
         }
-    }
+    });
 
     // return even vector
     even
