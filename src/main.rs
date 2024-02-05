@@ -7,8 +7,6 @@ use std::io::Write;
 // Output: The even numbers.
 // Constraints: use vector, dont use builtin filter function
 
-#[cfg(test)]
-
 fn filter_even_numbers(numbers: Vec<i64>) -> Vec<i64> {
     // initialize even vector
     let mut even: Vec<i64> = vec![];
@@ -24,6 +22,8 @@ fn filter_even_numbers(numbers: Vec<i64>) -> Vec<i64> {
     // return even vector
     even
 }
+
+#[cfg(test)]
 mod tests {
     use super::filter_even_numbers;
 
