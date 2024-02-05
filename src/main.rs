@@ -40,5 +40,10 @@ mod tests {
     }
 }
 fn main() {
-    println!("Hello, world!");
+    // get input, "Enter a list of numbers, separated by spaces: "
+    // extract the numbers to a vec of i64
+    // if there is not number, show error.
+
+    // get the even numbers
+    // print, "The even numbers are: "
 }
