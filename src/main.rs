@@ -5,6 +5,14 @@
 // Constraints: use vector, dont use builtin filter function
 
 #[cfg(test)]
+
+fn filter_even_numbers(numbers: Vec<i64>) -> Vec<i64> {
+    // initialize even vector
+    // Iterate numbers
+    // if divisible by 2, push to even vector
+
+    // return even vector
+}
 mod tests {
     use super::*;
 
