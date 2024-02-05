@@ -22,7 +22,7 @@ fn filter_even_numbers(numbers: Vec<i64>) -> Vec<i64> {
     even
 }
 mod tests {
-    use super::*;
+    use super::filter_even_numbers;
 
     #[test]
     fn test_filter_even_numbers() {
